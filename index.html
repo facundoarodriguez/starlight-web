@@ -27,6 +27,7 @@
   <input type="radio" name="slides" id="slide2">
   <input type="radio" name="slides" id="slide3">
   <input type="radio" name="slides" id="slide4">
+  <input type="radio" name="slides" id="slide5">
   
   <div class="slides">
     <div class="slide" style="background-image: url('source/img/slide05.jpg');">
@@ -53,6 +54,12 @@
         <p>a las principales empresas del país</p>
       </div>
     </div>
+    <div class="slide" style="background-image: url('source/img/slide09.jpg');">
+      <div class="slide-text">
+        <h2>Nos dedicamos</h2>
+        <p>a la tecnología desde 1968</p>
+      </div>
+    </div>
   </div>
   
   <div class="dots">
@@ -60,6 +67,7 @@
     <label for="slide2"></label>
     <label for="slide3"></label>
     <label for="slide4"></label>
+    <label for="slide5"></label>
   </div>
 </div>
 
@@ -87,17 +95,17 @@
   <footer class="main-footer">
   <div class="footer-left">
     <h2>CONTÁCTENOS</h2>
-    <form class="contact-form">
+    <form class="contact-form" action="https://formspree.io/f/mrbkovlg" method="POST">
       <div class="form-row">
-        <input type="text" placeholder="Escriba su nombre">
-        <input type="email" placeholder="Escriba su Email">
+        <input type="text" name="nombre" id="nombre" placeholder="Escriba su nombre" required>
+        <input type="email" name="email" id="email" placeholder="Escriba su Email" required>
       </div>
-      <textarea placeholder="Déjenos un mensaje"></textarea>
-      <button type="submit">Submit</button>
+      <textarea name="mensaje" id="mensaje" placeholder="Déjenos un mensaje"></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </div>
 
-  <div class="footer-right">
+  <div class="footer-right" id="contacto">
     <h2>Starlight Electrónica S.R.L.</h2>
     <p><b>Administración y operaciones:</b></p>
     <p>Chacabuco 61, Ciudadela, Bs As</p>

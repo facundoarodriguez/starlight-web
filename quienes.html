@@ -29,10 +29,30 @@
         <input type="radio" name="slides" id="slide4">
         
         <div class="slides">
-            <div class="slide" style="background-image: url('source/img/slide01.jpg');"></div>
-            <div class="slide" style="background-image: url('source/img/slide02.jpg');"></div>
-            <div class="slide" style="background-image: url('source/img/slide03.jpg');"></div>
-            <div class="slide" style="background-image: url('source/img/slide04.jpg');"></div>
+            <div class="slide" style="background-image: url('source/img/slide01.jpg');">
+              <div class="slide-text-2">
+                <h2>Reconocimiento</h2>
+                <p>por nuestra calidad técnica</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image: url('source/img/slide02.jpg');">
+              <div class="slide-text">
+                <h2>Trayectoria</h2>
+                <p>por el trabajo con nuestros clientes</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image: url('source/img/slide03.jpg');">
+              <div class="slide-text">
+                <h2>Calidad y dedicación</h2>
+                <p>en todos nuestros productos</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image: url('source/img/slide04.jpg');">
+              <div class="slide-text">
+                <h2>Formación</h2>
+                <p>aplicada a crear tecnología</p>
+              </div>
+            </div>
         </div>
         
         <div class="dots">
@@ -45,11 +65,14 @@
 
     <section class="info-section">
         <div class="left-column">
-            <iframe class="video"
-              src="https://player.vimeo.com/video/351182743?h=15edb14d0e&dnt=1&app_id=122963"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen></iframe>
+            <div class="video-wrapper">
+              <iframe src="https://player.vimeo.com/video/1096621363?background=0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                allowfullscreen
+                title="Quiénes Somos - Starlight Electronica SRL">
+              </iframe>
+            </div>
             <h2 class="video-text"> <br>QUIÉNES SOMOS</h2>
             <p class="video-text">Desde 1968 somos una empresa líder en sistemas de seguridad electrónica, reconocidos en el mercado por la confiabilidad de nuestros productos, la calidad de servicio personalizada y por nuestra respuesta inmediata. <br><br> comprometemos con la necesidad de cada cliente, focalizando nuestros recursos en brindar siempre una solución tecnológica integral y eficiente. <br><br> Hacemos especial énfasis en la importancia del entrenamiento constante para seguir siendo valorados tanto en lo técnico como en lo humano.</p>
             <h2 class="video-text"> <br>NUESTRA FILOSOFÍA</h2>
@@ -66,17 +89,17 @@
     <footer class="main-footer">
   <div class="footer-left">
     <h2>CONTÁCTENOS</h2>
-    <form class="contact-form">
+    <form class="contact-form" action="https://formspree.io/f/mrbkovlg" method="POST">
       <div class="form-row">
-        <input type="text" placeholder="Escriba su nombre">
-        <input type="email" placeholder="Escriba su Email">
+        <input type="text" name="nombre" id="nombre" placeholder="Escriba su nombre" required>
+        <input type="email" name="email" id="email" placeholder="Escriba su Email" required>
       </div>
-      <textarea placeholder="Déjenos un mensaje"></textarea>
-      <button type="submit">Submit</button>
+      <textarea name="mensaje" id="mensaje" placeholder="Déjenos un mensaje"></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </div>
 
-  <div class="footer-right">
+  <div class="footer-right" id="contacto">
     <h2>Starlight Electrónica S.R.L.</h2>
     <p><b>Administración y operaciones:</b></p>
     <p>Chacabuco 61, Ciudadela, Bs As</p>
@@ -92,4 +115,16 @@
 </footer>
     
 </body>
+
+<script>
+  let current = 1;
+  const total = 4;
+
+  setInterval(() => {
+    document.getElementById(`slide${current}`).checked = true;
+
+    current = current < total ? current + 1 : 1;
+  }, 7000);
+</script>
+
 </html>
