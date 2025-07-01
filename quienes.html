@@ -12,7 +12,10 @@
   <header>
     <div class="container nav-container">
       <img src="source/img/logo_star.jpg" alt="Logo Starlight">
-      <nav>
+      
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      
+      <nav id="nav-menu">
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="#quienes" class="active">Quiénes Somos</a></li>
@@ -32,26 +35,30 @@
         <div class="slides">
             <div class="slide" style="background-image: url('source/img/slide01.jpg');">
               <div class="slide-text-2">
-                <h2>Reconocimiento</h2>
-                <p>por nuestra calidad técnica</p>
+                <h2 class="desktop-only">Reconocimiento</h2>
+                <p class="desktop-only">por nuestra calidad técnica</p>
+                <p class="mobile-only">Reconocimiento por nuestra calidad técnica</p>
               </div>
             </div>
             <div class="slide" style="background-image: url('source/img/slide02.jpg');">
               <div class="slide-text">
-                <h2>Trayectoria</h2>
-                <p>por el trabajo con nuestros clientes</p>
+                <h2 class="desktop-only">Trayectoria</h2>
+                <p class="desktop-only">por el trabajo con nuestros clientes</p>
+                <p class="mobile-only">Trayectoria por el trabajo con nuestros clientes</p>
               </div>
             </div>
             <div class="slide" style="background-image: url('source/img/slide03.jpg');">
               <div class="slide-text">
-                <h2>Calidad y dedicación</h2>
-                <p>en todos nuestros productos</p>
+                <h2 class="desktop-only">Calidad y dedicación</h2>
+                <p class="desktop-only">en todos nuestros productos</p>
+                <p class="mobile-only">Calidad y dedicación en todos nuestros productos</p>
               </div>
             </div>
             <div class="slide" style="background-image: url('source/img/slide04.jpg');">
               <div class="slide-text">
-                <h2>Formación</h2>
-                <p>aplicada a crear tecnología</p>
+                <h2 class="desktop-only">Formación</h2>
+                <p class="desktop-only">aplicada a crear tecnología</p>
+                <p class="mobile-only">Formación aplicada a crear tecnología</p>
               </div>
             </div>
         </div>
@@ -126,6 +133,15 @@
 
     current = current < total ? current + 1 : 1;
   }, 7000);
+</script>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
 </script>
 
 </html>

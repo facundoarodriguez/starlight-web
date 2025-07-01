@@ -12,7 +12,10 @@
   <header>
     <div class="container nav-container">
       <img src="source/img/logo_star.jpg" alt="Logo Starlight">
-      <nav>
+      
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      
+      <nav id="nav-menu">
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="quienes.html">Quiénes Somos</a></li>
@@ -199,7 +202,15 @@
   </div>
 </footer>
 
-
-  <script src="script.js"></script>
 </body>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
+
 </html>

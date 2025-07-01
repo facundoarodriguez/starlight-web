@@ -321,6 +321,26 @@
   color: white;
 }
 
+.slide-text-3 {
+  position: absolute;
+  bottom: 40%;
+  left: 10%;
+  border-radius: 5px;
+  text-align: left;
+  z-index: 2;
+}
+
+.slide-text-3 h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.slide-text-3 p {
+  font-size: 2rem;
+  color: white;
+}
+
 
 
 /* ----------------------------- */
@@ -484,5 +504,228 @@ hr {
 @keyframes fade-in-texto {
   to {
     opacity: 1;
+  }
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.desktop-only{
+  display: block;
+}
+
+.mobile-only{
+  display: none;
+}
+
+/*--------------------------------*/
+/*---------- RESPONSIVE ----------*/
+/*--------------------------------*/
+
+@media (max-width: 768px) {
+
+  /*------NAVBAR------*/
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  .hamburger {
+    display: block;
+    color: #444;
+  }
+
+  nav {
+    width: 100%;
+    display: none; /* Oculto inicialmente */
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    padding: 10px 0;
+    margin: 0;
+    text-align: right;
+  }
+
+  nav.show {
+    display: block;
+  }
+
+  nav a {
+    padding: 10px 20px;
+    display: block;
+  }
+
+  header img {
+    width: 40%;
+  }
+
+  /*------CARRUSEL------*/
+  .radio-carousel {
+    max-width: 100%;
+    height: 250px; /* o ajustá a gusto */
+  }
+
+  .slide {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .slide-text,
+  .slide-text-2 {
+    bottom: 30%;
+    left: 5%;
+    right: 5%;
+    text-align: center;
+  }
+
+  .silde-text-3 {
+    bottom: 40%;
+    left: 5%;
+    right: 5%;
+    text-align: center;
+  }
+
+  .slide-text h2,
+  .slide-text p,
+  .slide-text-2 h2,
+  .slide-text-2 p {
+    font-size: 2rem;
+  }
+
+    .desktop-only{
+    display: none;
+  }
+
+  .mobile-only{
+    display: block;
+  }
+
+  /*------SECCION SOLUCIONES------*/
+  .soluciones_a_medida p {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .soluciones_img {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 10%;
+  }
+
+  .soluciones_img > div {
+    width: 100%;
+  }
+
+  .soluciones_img p {
+    padding: 10px 10px;
+  }
+
+  /*------FOOTER------*/
+  .main-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    text-align: left;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .footer-left {
+    padding: 0 20px;
+  }
+
+  .footer-right {
+    text-align: left;
+    padding: 0 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-form button {
+    align-self: flex-end;
+  }
+
+  /*------SECTION QUIENES SOMOS------*/
+  .info-section {
+    flex-direction: column;
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .left-column, .right-column {
+    width: 100%;
+  }
+
+  .right-column {
+    margin-top: 20px;
+  }
+
+  .video-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .video-wrapper {
+    padding-bottom: 56.25%;
+    margin-bottom: 1.5rem;
+  }
+
+  .side-img {
+    width: 100%;
+    height: auto;
+  }
+
+  /*------PRODUCTOS------*/
+  .producto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .producto-texto,
+  .producto-imagenes {
+    width: 100%;
+  }
+
+  .producto-imagenes {
+    align-items: center; /* Centra la imagen debajo del texto */
+  }
+
+  .producto-imagenes img {
+    width: 90%; /* Un poco de margen a los lados */
+    max-width: 500px;
+  }
+
+  .productos {
+    padding: 20px 15px;
+  }
+
+  .productos h1,
+  .productos h3 {
+    font-size: 1.8rem;
+  }
+
+  .producto-texto ul.lista {
+    padding-left: 18px;
   }
 }

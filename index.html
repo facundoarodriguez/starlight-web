@@ -12,7 +12,10 @@
   <header>
     <div class="container nav-container">
       <img src="source/img/logo_star.jpg" alt="Logo Starlight">
-      <nav>
+      
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      
+      <nav id="nav-menu">
         <ul>
           <li><a href="#inicio" class="active">Inicio</a></li>
           <li><a href="quienes.html">Quiénes Somos</a></li>
@@ -23,42 +26,48 @@
     </div>
   </header>
 
+
   <div class="radio-carousel">
-  <input type="radio" name="slides" id="slide1" checked>
-  <input type="radio" name="slides" id="slide2">
-  <input type="radio" name="slides" id="slide3">
-  <input type="radio" name="slides" id="slide4">
-  <input type="radio" name="slides" id="slide5">
+    <input type="radio" name="slides" id="slide1" checked>
+    <input type="radio" name="slides" id="slide2">
+    <input type="radio" name="slides" id="slide3">
+    <input type="radio" name="slides" id="slide4">
+    <input type="radio" name="slides" id="slide5">
   
   <div class="slides">
     <div class="slide" style="background-image: url('source/img/slide05.jpg');">
       <div class="slide-text">
-        <h2>Desarrollamos e implementamos</h2>
-        <p>tecnologías a medida</p>
+        <h2 class="desktop-only">Desarrollamos e implementamos</h2>
+        <p class="desktop-only">tecnologías a medida</p>
+        <p class="mobile-only">Desarrollamos e implementamos tecnolocías a medida</p>
       </div>
     </div>
     <div class="slide" style="background-image: url('source/img/slide06.jpg');">
-      <div class="slide-text">
-        <h2 class="fade-in-texto">Cobertura Nacional</h2>
-        <p>Tenemos presencia técnica en todo el país</p>
+      <div class="slide-text-3">
+        <h2 class="desktop-only">Cobertura Nacional</h2>
+        <p class="desktop-only">Tenemos presencia técnica en todo el país</p>
+        <p class="mobile-only">Cobertura técnica Nacional</p>
       </div>
     </div>
     <div class="slide" style="background-image: url('source/img/slide07.jpg');">
       <div class="slide-text-2">
-        <h2>Estamos comprometidos</h2>
-        <p>con la calidad y el servicio técnico</p>
+        <h2 class="desktop-only">Estamos comprometidos</h2>
+        <p class="desktop-only">con la calidad y el servicio técnico</p>
+        <p class="mobile-only">Compromiso con la calidad y el servicio técnico</p>
       </div>
     </div>
     <div class="slide" style="background-image: url('source/img/slide08.jpg');">
       <div class="slide-text">
-        <h2>Prestamos servicio</h2>
-        <p>a las principales empresas del país</p>
+        <h2 class="desktop-only">Prestamos servicio</h2>
+        <p class="desktop-only">a las principales empresas del país</p>
+        <p class="mobile-only">Prestamos servicio a las principales empresas del país</p>
       </div>
     </div>
     <div class="slide" style="background-image: url('source/img/slide09.jpg');">
       <div class="slide-text">
-        <h2>Nos dedicamos</h2>
-        <p>a la tecnología desde 1968</p>
+        <h2 class="desktop-only">Nos dedicamos</h2>
+        <p class="desktop-only">a la tecnología desde 1968</p>
+        <p class="mobile-only">Nos dedicamos a la tecnología desde 1968</p>
       </div>
     </div>
   </div>
@@ -94,32 +103,32 @@
   </section>
 
   <footer class="main-footer">
-  <div class="footer-left">
-    <h2>CONTÁCTENOS</h2>
-    <form class="contact-form" action="https://formspree.io/f/mrbkovlg" method="POST">
-      <div class="form-row">
-        <input type="text" name="nombre" id="nombre" placeholder="Escriba su nombre" required>
-        <input type="email" name="email" id="email" placeholder="Escriba su Email" required>
-      </div>
-      <textarea name="mensaje" id="mensaje" placeholder="Déjenos un mensaje"></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
+    <div class="footer-left">
+      <h2>CONTÁCTENOS</h2>
+      <form class="contact-form" action="https://formspree.io/f/mrbkovlg" method="POST">
+        <div class="form-row">
+          <input type="text" name="nombre" id="nombre" placeholder="Escriba su nombre" required>
+          <input type="email" name="email" id="email" placeholder="Escriba su Email" required>
+        </div>
+        <textarea name="mensaje" id="mensaje" placeholder="Déjenos un mensaje"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
 
-  <div class="footer-right" id="contacto">
-    <h2>Starlight Electrónica S.R.L.</h2>
-    <p><b>Administración y operaciones:</b></p>
-    <p>Chacabuco 61, Ciudadela, Bs As</p>
-    <p>+54 11 6065 5300</p>
-    <p>starlight@starlight.com.ar</p>
-    <p>administracion@starlight.com.ar</p>
-    <p>operaciones@starlight.com.ar</p>
-    <br><p><b>Oficinas Comerciales:</b></p>
-    <p>Montevideo 708 Piso 9, CABA</p>
-    <p>+54 11 6065 5300 (Int. 232/233)</p>
-    <p>ventas@starlight.com.ar</p>
-  </div>
-</footer>
+    <div class="footer-right" id="contacto">
+      <h2>Starlight Electrónica S.R.L.</h2>
+      <p><b>Administración y operaciones:</b></p>
+      <p>Chacabuco 61, Ciudadela, Bs As</p>
+      <p>+54 11 6065 5300</p>
+      <p>starlight@starlight.com.ar</p>
+      <p>administracion@starlight.com.ar</p>
+      <p>operaciones@starlight.com.ar</p>
+      <br><p><b>Oficinas Comerciales:</b></p>
+      <p>Montevideo 708 Piso 9, CABA</p>
+      <p>+54 11 6065 5300 (Int. 232/233)</p>
+      <p>ventas@starlight.com.ar</p>
+    </div>
+  </footer>
 
 
   <script src="script.js"></script>
@@ -136,5 +145,13 @@
   }, 7000);
 </script>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
 
 </html>
