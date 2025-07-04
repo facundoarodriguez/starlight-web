@@ -53,11 +53,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  header img {
-    width: 15%;
-    height: auto;
+  .logo img {
+    max-height: 50px;
+    width: auto;
   }
-  
+
   .nav-container {
     display: flex;
     justify-content: space-between;
@@ -687,8 +687,8 @@ hr {
   }
 
   .video-wrapper {
-    padding-bottom: 56.25%;
-    margin-bottom: 1.5rem;
+    padding-bottom: 60%;
+    margin-bottom: 1rem;
   }
 
   .side-img {

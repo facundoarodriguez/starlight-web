@@ -11,7 +11,9 @@
 
   <header>
     <div class="container nav-container">
-      <img src="source/img/logo_star.jpg" alt="Logo Starlight">
+      <a href="index.html" class="logo">
+        <img src="source/img/logo_star.jpg" alt="Logo Starlight">
+      </a>
       
       <button class="hamburger" id="hamburger">&#9776;</button>
       
@@ -34,52 +36,52 @@
     <input type="radio" name="slides" id="slide4">
     <input type="radio" name="slides" id="slide5">
   
-  <div class="slides">
-    <div class="slide" style="background-image: url('source/img/slide05.jpg');">
-      <div class="slide-text">
-        <h2 class="desktop-only">Desarrollamos e implementamos</h2>
-        <p class="desktop-only">tecnologías a medida</p>
-        <p class="mobile-only">Desarrollamos e implementamos tecnolocías a medida</p>
+    <div class="slides">
+      <div class="slide" style="background-image: url('source/img/slide05.jpg');">
+        <div class="slide-text">
+          <h2 class="desktop-only">Desarrollamos e implementamos</h2>
+          <p class="desktop-only">tecnologías a medida</p>
+          <p class="mobile-only">Desarrollamos e implementamos tecnolocías a medida</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('source/img/slide06.jpg');">
+        <div class="slide-text-3">
+          <h2 class="desktop-only">Cobertura Nacional</h2>
+          <p class="desktop-only">Tenemos presencia técnica en todo el país</p>
+          <p class="mobile-only">Cobertura técnica Nacional</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('source/img/slide07.jpg');">
+        <div class="slide-text-2">
+          <h2 class="desktop-only">Estamos comprometidos</h2>
+          <p class="desktop-only">con la calidad y el servicio técnico</p>
+          <p class="mobile-only">Compromiso con la calidad y el servicio técnico</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('source/img/slide08.jpg');">
+        <div class="slide-text">
+          <h2 class="desktop-only">Prestamos servicio</h2>
+          <p class="desktop-only">a las principales empresas del país</p>
+          <p class="mobile-only">Prestamos servicio a las principales empresas del país</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('source/img/slide09.jpg');">
+        <div class="slide-text">
+          <h2 class="desktop-only">Nos dedicamos</h2>
+          <p class="desktop-only">a la tecnología desde 1968</p>
+          <p class="mobile-only">Nos dedicamos a la tecnología desde 1968</p>
+        </div>
       </div>
     </div>
-    <div class="slide" style="background-image: url('source/img/slide06.jpg');">
-      <div class="slide-text-3">
-        <h2 class="desktop-only">Cobertura Nacional</h2>
-        <p class="desktop-only">Tenemos presencia técnica en todo el país</p>
-        <p class="mobile-only">Cobertura técnica Nacional</p>
-      </div>
-    </div>
-    <div class="slide" style="background-image: url('source/img/slide07.jpg');">
-      <div class="slide-text-2">
-        <h2 class="desktop-only">Estamos comprometidos</h2>
-        <p class="desktop-only">con la calidad y el servicio técnico</p>
-        <p class="mobile-only">Compromiso con la calidad y el servicio técnico</p>
-      </div>
-    </div>
-    <div class="slide" style="background-image: url('source/img/slide08.jpg');">
-      <div class="slide-text">
-        <h2 class="desktop-only">Prestamos servicio</h2>
-        <p class="desktop-only">a las principales empresas del país</p>
-        <p class="mobile-only">Prestamos servicio a las principales empresas del país</p>
-      </div>
-    </div>
-    <div class="slide" style="background-image: url('source/img/slide09.jpg');">
-      <div class="slide-text">
-        <h2 class="desktop-only">Nos dedicamos</h2>
-        <p class="desktop-only">a la tecnología desde 1968</p>
-        <p class="mobile-only">Nos dedicamos a la tecnología desde 1968</p>
-      </div>
-    </div>
-  </div>
   
-  <div class="dots">
-    <label for="slide1"></label>
-    <label for="slide2"></label>
-    <label for="slide3"></label>
-    <label for="slide4"></label>
-    <label for="slide5"></label>
+    <div class="dots">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+      <label for="slide5"></label>
+    </div>
   </div>
-</div>
 
   <section id="soluciones" class="section">
     <div class="soluciones_a_medida fade-in-2">
@@ -130,19 +132,70 @@
     </div>
   </footer>
 
-
-  <script src="script.js"></script>
 </body>
 
 <script>
   let current = 1;
   const total = 5;
+  let interval;
 
-  setInterval(() => {
+  function showSlide(index) {
+    current = index;
     document.getElementById(`slide${current}`).checked = true;
+  }
 
+  function nextSlide() {
     current = current < total ? current + 1 : 1;
-  }, 7000);
+    showSlide(current);
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 7000);
+  }
+
+  // Iniciar el carrusel
+  interval = setInterval(nextSlide, 7000);
+
+  // Añadir evento a los dots (por si se clickea manualmente)
+  const dots = document.querySelectorAll('.dots label');
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      showSlide(index + 1);
+      resetInterval();
+    });
+  });
+
+  // Soporte táctil para móviles
+  const slidesContainer = document.querySelector('.slides');
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  slidesContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  slidesContainer.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture();
+  });
+
+  function handleGesture() {
+    const swipeThreshold = 50; // Mínima distancia para considerar un swipe
+    const diff = touchEndX - touchStartX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff < 0) {
+        // swipe hacia la izquierda → siguiente
+        current = current < total ? current + 1 : 1;
+      } else {
+        // swipe hacia la derecha → anterior
+        current = current > 1 ? current - 1 : total;
+      }
+      showSlide(current);
+      resetInterval();
+    }
+  }
 </script>
 
 <script>
