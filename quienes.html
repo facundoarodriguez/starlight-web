@@ -128,13 +128,66 @@
 
 <script>
   let current = 1;
-  const total = 4;
+  const total = 5;
+  let interval;
 
-  setInterval(() => {
+  function showSlide(index) {
+    current = index;
     document.getElementById(`slide${current}`).checked = true;
+  }
 
+  function nextSlide() {
     current = current < total ? current + 1 : 1;
-  }, 7000);
+    showSlide(current);
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 7000);
+  }
+
+  // Iniciar el carrusel
+  interval = setInterval(nextSlide, 7000);
+
+  // Añadir evento a los dots (por si se clickea manualmente)
+  const dots = document.querySelectorAll('.dots label');
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      showSlide(index + 1);
+      resetInterval();
+    });
+  });
+
+  // Soporte táctil para móviles
+  const slidesContainer = document.querySelector('.slides');
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  slidesContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  slidesContainer.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture();
+  });
+
+  function handleGesture() {
+    const swipeThreshold = 50; // Mínima distancia para considerar un swipe
+    const diff = touchEndX - touchStartX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff < 0) {
+        // swipe hacia la izquierda → siguiente
+        current = current < total ? current + 1 : 1;
+      } else {
+        // swipe hacia la derecha → anterior
+        current = current > 1 ? current - 1 : total;
+      }
+      showSlide(current);
+      resetInterval();
+    }
+  }
 </script>
 
 <script>
