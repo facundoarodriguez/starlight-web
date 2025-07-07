@@ -201,9 +201,16 @@
 <script>
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
+  const navLinks = navMenu.querySelectorAll('a');
 
   hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('show');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+    });
   });
 </script>
 
